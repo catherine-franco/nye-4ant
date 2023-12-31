@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <link rel="stylesheet" href="countdown.css">
+        
+    </head> 
+    <body>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <div class="container">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+p {
+    font-family: 'Helvetica';
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+  text-align: center;
+  margin-top: 0px;
+}
+</style>
+            <p id="demo"></p>
+
+<script>
+
+var countDownDate = new Date("January 1 2024, 00:00:00").getTime();
+
+
+var x = setInterval(function() {
+
+  
+  var now = new Date().getTime();
+    
+  
+  var distance = countDownDate - now;
+    
+  
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+    
+  
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "happy new year!!!";
+    document.getElementById("img1").src = "https://media2.giphy.com/media/nZKebF7MfccP0ZBblM/giphy.gif?cid=ecf05e47ufhvgd6wpk75n2fron8w7qzwijjgzubax8uherj3&ep=v1_gifs_related&rid=giphy.gif&ct=s"; // Change this line to the new image source
+    document.querySelector(".header_text").innerHTML = "*new years smooches*"; // Change this line to the new header text
+    document.body.style.background = "url('https://media4.giphy.com/media/h8aKaIyzl1pQ53d2i5/giphy.gif?cid=ecf05e47kh2g27h3e5hl1e6ef3841z8bd8u8cxmkf912mok1&ep=v1_gifs_related&rid=giphy.gif&ct=s')" ; // Change this line to the new background image URL
+    document.body.style.backgroundColor = "#85E1E0"; // Adjust the background color as needed
+    
+    
+  }
+}, 1000);
+</script>
+            <div >
+                <h1 class = "header_text"> until the new year! </h1>
+            </div>
+            <div class="gif_container">
+                <img id="img1" src="https://media1.giphy.com/media/9PrFY6INWWTNORgp2P/giphy.gif?cid=ecf05e47e3o5510fo8q676bwd366l8c72rxt265vsvc3m5wt&ep=v1_stickers_search&rid=giphy.gif&ct=s" alt="Cute animated illustration">
+            </div>
+            <p class = "text"> cheers hehe </p>
+        </div>
+       
+    </body> 
+</html>
